@@ -54,6 +54,17 @@ class MonaryError(Exception):
     pass
 
 
+def _find_cmonary(moduledir, module_ext):
+    for root, dirs, files in os.walk(moduledir):
+        for basename in files:
+            name, ext = os.path.splitext(basename)
+            first = name.split('.')[0]
+            if ext == module_ext and first == 'libcmonary':
+                return os.path.join(root, basename)
+
+    raise RuntimeError("Unable to find cmonary shared library: libcmonary")
+
+
 def _load_cmonary_lib():
     """Loads the cmonary CDLL library (from the directory containing
     this module).
@@ -61,22 +72,11 @@ def _load_cmonary_lib():
     global cmonary
     moduledir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     if platform.system() == 'Windows':
-        cmonary_fname = "libcmonary.pyd"
+        cmonary_ext = ".pyd"
     else:
-        cmonary_fname = "libcmonary.so"
+        cmonary_ext = ".so"
 
-    cmonaryfile = None
-
-    for root, dirs, files in os.walk(moduledir):
-        for basename in files:
-            if basename == cmonary_fname:
-                cmonaryfile = os.path.join(root, basename)
-                break
-    if cmonaryfile is None:
-        raise RuntimeError("Unable to find cmonary shared library: ",
-                           cmonary_fname)
-
-    cmonary = ctypes.CDLL(cmonaryfile)
+    cmonary = ctypes.CDLL(_find_cmonary(moduledir, cmonary_ext))
 
 _load_cmonary_lib()
 
