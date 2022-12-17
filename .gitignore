@@ -1,0 +1,6 @@
+dist
+target
+docs/build/*
+.directory
+.python-version
+..*
