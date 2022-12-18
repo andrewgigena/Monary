@@ -3,7 +3,7 @@
 
 import numpy
 
-from monary import Monary
+from monary_mongo import Monary
 from profile import profile
 
 def do_monary_query():

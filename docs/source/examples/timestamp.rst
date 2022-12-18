@@ -8,7 +8,7 @@ Setup
 We can use Monary to populate a collection with some test data containing
 random timestamps. First, make a connection::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> client = Monary()
 
 Then we can generate random timestamps::
@@ -32,7 +32,7 @@ Next we put these values into a numpy masked array::
 
 Finally we use monary to insert this data into MongoDB::
 
-    >>> from monary import MonaryParam
+    >>> from monary_mongo import MonaryParam
     >>> client.insert(
     ...     "test", "data", [MonaryParam(ts_array, "ts", "timestamp")])
 

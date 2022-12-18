@@ -44,7 +44,7 @@ shell:
 Because there is a type mismatch for the field "a", some values will be masked
 depending on what type the query asks for::
 
-    >>> from monary import Monary()
+    >>> from monary_mongo import Monary()
     >>> m = Monary()
     >>> m.query("test", "foo", {}, ["a"], ["int32"], sort="sequence")
     [masked_array(data = [1 --],
@@ -94,7 +94,7 @@ Or it may look like this::
 If you would like this as a ``bson.objectid.ObjectId``, it can be done like
 this::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> with Monary() as m:
     ...     ids = m.query("db", "col", {}, ["_id"], ["id"])
 
@@ -112,7 +112,7 @@ MongoDB has very flexible schemas; a consequence of this is that documents in
 the same collection can have fields of different types. To determine the type
 of data for a certain field name, specify the type "type"::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> m = Monary()
     >>> m.query("test", "foo", {}, ["a"], ["type"])
     [masked_array(data = [16 2]

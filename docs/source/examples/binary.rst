@@ -23,7 +23,7 @@ This creates 100 files, each containing ``$SIZE`` bytes of random data.
 For this example, let's use Monary to insert raw binary image data into
 MongoDB. First, we can set up a connection to the local MongoDB database::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> client = Monary()
 
 
@@ -50,7 +50,7 @@ Next we convert the image list into a numpy masked array:
 
 Finally, we use Monary's ``binary`` type to insert the data into MongoDB::
 
-    >>> from monary import MonaryParam
+    >>> from monary_mongo import MonaryParam
     >>> img_mp = MonaryParam(img_array, "img", "binary:%d" % max_size)
     >>> size_mp = MonaryParam(sizes, "size")
     >>> client.insert("test", "data", [img_mp, size_mp])

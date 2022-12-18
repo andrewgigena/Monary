@@ -14,7 +14,7 @@ the field "count" with the values 1-12::
 
 If you wanted to make a MonaryParam that represented the field ``count``, you could::
 
-   >>> from monary import MonaryParam
+   >>> from monary_mongo import MonaryParam
    >>> mp = MonaryParam(count_values, count_field, count_type)
 
 Or, because some types can be determined by the type of the NumPy masked array,

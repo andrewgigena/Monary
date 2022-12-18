@@ -89,7 +89,7 @@ Here's an example of the same query using monary:
 .. code-block:: python
     #!/usr/bin/env python
 
-    from monary import Monary
+    from monary_mongo import Monary
     import numpy
 
     with Monary("127.0.0.1") as monary:

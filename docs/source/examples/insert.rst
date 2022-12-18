@@ -72,7 +72,7 @@ The semester has ended, and it's time to assign grades to each student.
 Let's first get all the raw test data back into NumPy arrays with Monary::
 
     >>> import numpy as np
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> m = Monary()
     >>> ids, midterm, final = \
     ...     m.query("monary_students", "raw", {},
@@ -102,7 +102,7 @@ Now weight both tests and assign overall grades::
 
 Then we need to create ``MonaryParams``::
 
-    >>> from monary import MonaryParam
+    >>> from monary_mongo import MonaryParam
     >>> id_mp = MonaryParam(ids, "student_id", "string:14")
     >>> overall_mp = MonaryParam(overall_grades, "grades.overall")
     >>> midterm_mp = MonaryParam(grades[0], "grades.midterm")

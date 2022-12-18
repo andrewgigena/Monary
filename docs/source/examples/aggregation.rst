@@ -53,7 +53,7 @@ operation if your pipeline contains only one stage.
 
 This example will show all of the states in the dataset and their populations::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> m = Monary()
     >>> pipeline = [{"$group" : {"_id" : "$state",
     ...                          "totPop" : {"$sum" : "$pop"}}}]

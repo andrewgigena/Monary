@@ -46,7 +46,7 @@ class WriteConcern(object):
         self.wfsync = wfsync
         self.wtag = wtag
         self._c_write_concern = None
-        from .monary import cmonary
+        from .monary_mongo import cmonary
         self.cmonary = cmonary
 
     def get_c_write_concern(self):

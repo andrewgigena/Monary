@@ -14,7 +14,7 @@ Setup
 We can use PyMongo to populate a collection with some test data containing
 random strings. First, make a connection::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> client = Monary()
 
 Then, we can create a NumPy masked array of random strings::
@@ -35,7 +35,7 @@ Then, we can create a NumPy masked array of random strings::
 
 Finally we can use Monary to insert these strings::
 
-    >>> from monary import MonaryParam
+    >>> from monary_mongo import MonaryParam
     >>> client.insert(
     ...     "test", "data", [MonaryParam(strs, "stringdata", "string:10")])
 
@@ -52,7 +52,7 @@ a sample script that inserts non-ASCII strings:
 
     # -*- coding: utf-8 -*-
     # the above comment is needed for Python 2 files with non-ASCII characters
-    from monary import Monary, MonaryParam
+    from monary_mongo import Monary, MonaryParam
     import numpy as np
     from numpy import ma
 
@@ -105,7 +105,7 @@ If we don't know the maximum size of the strings in advance, we can
 :doc:`query </examples/query>` for their size, which returns the size of the
 strings in bytes::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> client = Monary()
     >>> sizes, = client.query("test", "data", {}, ["stringdata"], ["size"])
     >>> sizes

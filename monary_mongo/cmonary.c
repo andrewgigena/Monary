@@ -7,7 +7,6 @@
 
 #include "bson.h"
 #include "mongoc.h"
-#include "cmonary.h"
 #ifndef NDEBUG
 #define DEBUG(format, ...)                                                     \
   fprintf(stderr, "[DEBUG] %s:%i " format "\n", __FILE__, __LINE__, __VA_ARGS__)

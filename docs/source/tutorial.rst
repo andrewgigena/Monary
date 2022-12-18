@@ -22,7 +22,7 @@ Making a Connection with Monary
 To use **Monary**, we need to create a connection to a running **mongod**
 instance. We can make a new Monary object::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> client = Monary()
 
 This connects to the default host and port; it can also be specified

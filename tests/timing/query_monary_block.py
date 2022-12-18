@@ -1,7 +1,7 @@
 # Monary - Copyright 2011-2014 David J. C. Beach
 # Please see the included LICENSE.TXT and NOTICE.TXT for licensing information.
 
-from monary import Monary
+from monary_mongo import Monary
 import numpy
 
 from profile import profile

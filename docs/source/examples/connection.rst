@@ -5,7 +5,7 @@ instance. To connect to a MongoDB server, we simply make a new Monary object.
 The default host and port are ``"localhost"`` and ``27017`` respectively. This
 will connect to the default host and port::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> client = Monary()
 
 However, host and port can be specified explicitly::

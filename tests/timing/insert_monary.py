@@ -5,7 +5,7 @@ import numpy as np
 import numpy.ma as ma
 import numpy.random as nprand
 
-from monary import Monary, MonaryParam, WriteConcern, MONARY_W_DEFAULT
+from monary_mongo import Monary, MonaryParam, WriteConcern, MONARY_W_DEFAULT
 from profile import profile
 
 NUM_BATCHES = 4500

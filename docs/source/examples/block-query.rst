@@ -17,7 +17,7 @@ This setup will be identical to the setup in
 For this example, let's use Monary to insert documents with numerical data
 into MongoDB. First, we can set up a connection to the local MongoDB database::
 
-    >>> from monary import Monary
+    >>> from monary_mongo import Monary
     >>> client = Monary()
 
 Next, we generate some documents. These documents will represent financial
@@ -41,7 +41,7 @@ assets::
 
 Finally, we use Monary to insert the data into MongoDB::
 
-    >>> from monary import MonaryParam
+    >>> from monary_mongo import MonaryParam
     >>> sold, buy_price, sell_price = MonaryParam.from_lists(
     ...     [sold, buy_price, sell_price],
     ...     ["sold", "price.bought", "price.sold"])
