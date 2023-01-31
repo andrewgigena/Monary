@@ -416,10 +416,10 @@ class Monary(object):
                 raise ValueError("You cannot have a password with no"
                                  " username.")
 
-            uri.append("%s:%d" % (host, port))
+            uri.append("%s:%d/" % (host, port))
 
             if database is not None:
-                uri.append("/%s" % database)
+                uri.append("%s" % database)
             if options is not None:
                 uri.append("?%s" % urlencode(options))
             uri = "".join(uri)
