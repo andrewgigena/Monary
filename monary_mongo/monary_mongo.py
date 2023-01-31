@@ -443,6 +443,7 @@ class Monary(object):
             ctypes.c_bool(weak_cert_validation),
             ctypes.byref(err))
         if self._connection is None:
+            print(uri)
             raise MonaryError(err.message)
 
     def _make_column_data(self, fields, types, count):
