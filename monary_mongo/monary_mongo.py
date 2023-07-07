@@ -136,7 +136,7 @@ atexit.register(cmonary.monary_cleanup)
 MONARY_TYPES = {
     # "common_name": (cmonary_type_code, numpy_type_object)
     "id":        (1, numpy.dtype("<V12")),
-    "bool":      (2, numpy.bool),
+    "bool":      (2, bool),
     "int8":      (3, numpy.int8),
     "int16":     (4, numpy.int16),
     "int32":     (5, numpy.int32),
