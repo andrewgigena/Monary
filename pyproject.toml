@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "monary_mongo"
-version = "0.6.1"
+version = "0.6.2"
 description = "Monary performs high-performance column queries on MongoDB"
 authors = ["Andrew Gigena <mail@andrewgigena.dev>", "David J. C. Beach <info@djcinnovations.com>"]
 classifiers = [
